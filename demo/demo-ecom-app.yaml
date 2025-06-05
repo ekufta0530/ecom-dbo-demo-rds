@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-ecom-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-ecom-app
+  template:
+    metadata:
+      labels:
+        app: demo-ecom-app
+    spec:
+      containers:
+      - name: demo-ecom-app
+        image: sarveshanand94/ecomdb:v2
+        ports:
+          - containerPort: 3000
+        resources:
+          limits:
+            cpu: '3'
+            memory: 3000Mi
+          requests:
+            cpu: '3'
+            memory: 3000Mi
+        env:
+          - name: DB_NAME
+            value: "evershop"
+          - name: DB_USER
+            value: "postgres"
+          - name: DB_PASSWORD
+            value: ""
+          - name: DB_HOST # DBO K8S service endpoint
+            value: "dbo-kufta-dbo-demo-2-0dfab.castai-db-optimizer.svc.cluster.local"
+          - name: DB_PORT
+            value: "5432"
+          - name: DB_SSLMODE
+            value: "no-verify"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-ecom-app-service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: "false"
+spec:
+  selector:
+    app: demo-ecom-app
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: LoadBalancer  # This exposes the service publicly

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" id="favicon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pylon</title>
+    <script>
+      window.pylon = {
+        chat_settings: {
+          app_id: "1cd776f2-7f34-43dc-8139-02625b8903c9",
+          email: "",
+          name: "",
+          avatar_url: "",
+        },
+      };
+    </script>
+    <script>
+      (function () {
+        var e = window;
+        var t = document;
+        var n = function () {
+          n.e(arguments);
+        };
+        n.q = [];
+        n.e = function (e) {
+          n.q.push(e);
+        };
+        e.Pylon = n;
+        var r = function () {
+          var e = t.createElement("script");
+          e.setAttribute("type", "text/javascript");
+          e.setAttribute("async", "true");
+          e.setAttribute(
+            "src",
+            "https://widget.usepylon.com/widget/1cd776f2-7f34-43dc-8139-02625b8903c9"
+          );
+          var n = t.getElementsByTagName("script")[0];
+          n.parentNode.insertBefore(e, n);
+        };
+        if (t.readyState === "complete") {
+          r();
+        } else if (e.addEventListener) {
+          e.addEventListener("load", r, false);
+        }
+      })();
+    </script>
+    <style type="text/css">
+      @layer theme, base, components, nexus, utilities;
+    </style>
+    <script type="module" crossorigin src="/assets/a73a2c4f0be203ee74d8a915ec143586dc36e042.app.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/a73a2c4f0be203ee74d8a915ec143586dc36e042.index-BfoRNNd4.js">
+    <link rel="modulepreload" crossorigin href="/assets/a73a2c4f0be203ee74d8a915ec143586dc36e042.Navigate-D8Kh3CI7.js">
+    <link rel="stylesheet" crossorigin href="/assets/a73a2c4f0be203ee74d8a915ec143586dc36e042.index-BFPKZmlq.css">
+    <link rel="stylesheet" crossorigin href="/assets/a73a2c4f0be203ee74d8a915ec143586dc36e042.app-BoYNlShK.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+
