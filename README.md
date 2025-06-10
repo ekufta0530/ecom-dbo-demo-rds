@@ -6,10 +6,10 @@ Welcome to dbo ecommerce demo app!!
 
 ### Prereqs
 
-1. Cluster on AWS with an RDS instance. Free tier or Dev tier should be fine
+1. Cluster on AWS with an RDS instance. Use the smallest instance available for the RDS instance. 
 2. Eks cluster with DBO cache installed
 3. AWS load balancer controller installed -- [directions](https://docs.aws.amazon.com/eks/latest/userguide/lbc-helm.html)
-4. Database created. Use the test-psql.yaml pod to create the database
+4. Database created. Use the test-psql.yaml pod to create a database called evershop. 
 ```
 k apply -f psql-client
 k exec -it psql-client -- sh
